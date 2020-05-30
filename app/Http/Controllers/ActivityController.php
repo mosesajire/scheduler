@@ -67,7 +67,8 @@ class ActivityController extends Controller
      */
     public function show($id)
     {
-        //
+        // Showing individual activity is not required. Hence, redirect to all activities.
+        return redirect('/activities');
     }
 
     /**
