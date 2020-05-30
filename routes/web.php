@@ -17,4 +17,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Only authenticated users can access these routes
+Route::group(['middleware' => 'auth'], function() {
+
+	// Dashboard
+	Route::get('/dashboard', 'ActivityController@index');
+
+	// Activities
+	Route::resource('activities', 'ActivityController');
+
+	// Profile
+	Route::get('/profiles/', 'ProfileController@index');
+	Route::get('/profiles/{id}', 'ProfileController@show');
+	Route::get('/profiles/{id}/edit', 'ProfileController@edit');
+	Route::put('/profiles/{id}', 'ProfileController@update');
+
+});
+
