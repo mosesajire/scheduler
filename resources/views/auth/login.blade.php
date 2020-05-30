@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Login')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -62,6 +64,8 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
+                                 <p>Yet to create an account? <a href="/register">Register</a></p>
                             </div>
                         </div>
                     </form>

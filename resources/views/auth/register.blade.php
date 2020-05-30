@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Register')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -66,6 +68,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <p>Already created an account? <a href="/login">Login</a></p>
                             </div>
                         </div>
                     </form>
